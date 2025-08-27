@@ -32,6 +32,13 @@ This repository provides a secure and DevOps-friendly workflow for **rotating yo
 
 ## 🔁 CA Rotation Steps
 
+Before rotation check serial key current CA and compare it with generated <br>
+Security reasons and valitidy - if the CA was really rotated!
+```
+openssl x509 -in ca.crt -noout -serial | cut -d'=' -f2
+```
+
+
 ### 1. Backup current OpenVPN and PKI
 ```
 sudo cp -r /etc/openvpn /etc/openvpn-backup
@@ -77,4 +84,6 @@ sudo cp pki/ca.crt pki/issued/server.crt pki/private/server.key pki/dh.pem ta.ke
 
 CRL (Certificate Revocation List) is not neccesary. Why? <br>
 Old certs are untrusted by default because we fully rotated to new CA.
+
+
 
