@@ -26,10 +26,11 @@ This repository provides a secure and DevOps-friendly workflow for **rotating yo
 ---
 
 ## 📁 openvpn-ca-rotation <br>
-├── README.md # Overview and full manual CA rotation steps <br> 
+├── README.md # Overview and full manual CA rotation steps <br>
 ├── scripts/ <br>
-│   └── rotate-ca.sh  # (Optional) Automates CA rotation  <br>
-
+│ ├── rotate-ca.sh # (Optional) Automates CA rotation <br>
+│ └── readme.md # Script info <br>
+ 
 ## 🔁 CA Rotation Steps
 
 Before rotation check serial key current CA and compare it with generated <br>
